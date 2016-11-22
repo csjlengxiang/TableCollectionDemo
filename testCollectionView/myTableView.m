@@ -59,8 +59,12 @@
     CGFloat height = width / 3.0;
     NSAssert(number > 0, @"number must bigger than zero");
     int bs = (number - 1) / 3 + 1;
+    CGFloat add = 0;
+    if (bs > 3) {
+        add = 20;
+    }
     bs = MIN(3, bs);
-    return height * bs;
+    return height * bs + add;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
