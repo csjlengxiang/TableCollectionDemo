@@ -11,7 +11,7 @@
 
 @interface myTableViewCell : UITableViewCell
 
-@property (strong, nonatomic) UIView * hView;
+//@property (strong, nonatomic) UIView * hView;
 
 @property (strong, nonatomic) myCellCollectionView * collectionView;
 

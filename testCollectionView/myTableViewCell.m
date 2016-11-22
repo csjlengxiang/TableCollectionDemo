@@ -14,22 +14,23 @@
 
 - (instancetype)initWithDataArr:(NSArray *)items {
     if (self = [super initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"]) {
-        self.hView = [[UIView alloc] init];
-        [self addSubview:self.hView];
-        self.hView.backgroundColor = [UIColor blackColor];
-        
-        [self.hView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.top.equalTo(self);
-            make.height.mas_equalTo(10);
-        }];
+//        self.hView = [[UIView alloc] init];
+//        [self addSubview:self.hView];
+//        self.hView.backgroundColor = [UIColor blackColor];
+//        
+//        [self.hView mas_makeConstraints:^(MASConstraintMaker *make) {
+//            make.left.right.top.equalTo(self);
+//            make.height.mas_equalTo(10);
+//        }];
         
         self.collectionView = [[myCellCollectionView alloc] initWithDataArr:items];
         
         [self addSubview:self.collectionView];
         [self.collectionView mas_makeConstraints:^(MASConstraintMaker *make) {
-            make.left.right.equalTo(self.hView);
-            make.top.equalTo(self.hView.mas_bottom);
-            make.bottom.equalTo(self.mas_bottom);
+            make.edges.equalTo(self);
+//            make.left.right.equalTo(self);
+//            make.top.equalTo(self.hView.mas_bottom);
+//            make.bottom.equalTo(self.mas_bottom);
             //make.height.equalTo(self).multipliedBy(xx);
         }];
         
